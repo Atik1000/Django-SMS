@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block context %}
+<h4 class='text-center p-3'>Student List</h4>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Father </th>
+      <th scope="col">Mother</th>
+      <th scope="col">Reg </th>
+      <th scope="col">Gender</th>
+      <th scope="col">Birth Day</th>
+      <th scope="col">Time</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for student in std %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+     <th> <a href="{% url 'profile' student %}">{{ student }}</a> </th>
+
+      <td>{{ student.name }}</td>
+      <td>{{ student.father }}</td>
+      <td>{{ student.mother }}</td>
+      <td>{{ student.reg }}</td>
+      <td>{{ student.gender | title }}</td>
+      <td>{{ student.dob }}</td>
+      <td>{{ student.date_time}}</td>
+      <td> <a href="{% url 'delete' student %}" class="btn btn-outline-danger">Delete</a> </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock context %}

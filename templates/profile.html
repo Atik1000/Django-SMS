@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<h2 class='text-center p-3'>Student Profile Page !</h2>
+<div class="card m-auto" style="width: 50%;">
+  <!-- <img src="{{ std.photo.url }}" class="card-img-top" alt="..."> -->
+  <div class="card-body text-center">
+    <h5 class="card-title">{{ std.name }}</h5>
+    <h5 class="card-title">{{ std.roll }}</h5>
+    <h5 class="card-title">{{ std.father }}</h5>
+    <h5 class="card-title">{{ std.mother }}</h5>
+    <h5 class="card-title">{{ std.reg }}</h5>
+    <h5 class="card-title">{{ std.gender }}</h5>
+    <h5 class="card-title">{{ std.dob }}</h5>
+    <a class='btn btn-primary' href="{% url 'student' %}">Go back to List</a>
+  </div>
+  
+  
+</div>
+{% endblock context %}
+
